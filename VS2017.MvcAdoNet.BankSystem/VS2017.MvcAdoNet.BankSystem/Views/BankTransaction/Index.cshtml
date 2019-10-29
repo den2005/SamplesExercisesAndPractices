@@ -1,0 +1,59 @@
+﻿@model VS2017.BankSystem.AdoNetLibrary.BankAccount
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bank Account Transactions</title>
+</head>
+<body>
+
+<div>
+    <h4>BankTransaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LoginName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt>
+            Please Select Type of Transactions:
+        </dt>
+        <dd>
+            @Html.ActionLink("Transfer Amount", "Transfer", new { id = Model.Id }) |
+            
+            @Html.ActionLink("Deposit Amount", "Deposit", new { id = Model.Id }) |
+           
+            @Html.ActionLink("Withdraw Amount", "Withdraw", new { id = Model.Id }) |
+            
+            @Html.ActionLink("View Transaction History", "ViewTransaction", new { id = Model.Id })
+            
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Back to Login", "Index", "UserLogin", new { /* id = Model.PrimaryKey */ }) 
+  
+</div>
+</body>
+</html>
